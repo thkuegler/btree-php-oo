@@ -2,12 +2,44 @@
 include './BTreeData.php';
 
 /**
- * 
+ * This class provides the keys for the nodes of the b-tree.
+ * Every Keyelement contains the key value, the data to the key
+ * and pointer to its children if they exist.
+ * A Keyelement has either no children or two.
+ * A newly inserted Keyelement is always inserted into an leaf node
+ * and has therefore no children.
  */
 class Keyelement {
+	/**
+	 * The key to the Keyelement and its data.
+	 * 
+	 * @var int
+	 * @access private
+	 */
 	private $key;
+	
+	/**
+	 * The data saved under this key.
+	 * 
+	 * @var BTreeData
+	 * @access private
+	 */
 	private $bTreeData;
+	
+	/**
+	 * The left child of this Keyelement.
+	 * 
+	 * @var Node
+	 * @access private
+	 */
 	private $leftChild;
+	
+	/**
+	 * The right child of this Keyelement.
+	 * 
+	 * @var Node
+	 * @access private
+	 */
 	private $rightChild;
 	
 	function __construct($key, BTreeData $bTreeData, Node $leftChild=null, Node $rightChild=null)
