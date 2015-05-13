@@ -1,6 +1,14 @@
 <?php
-
+	/**
+	 * The class for saving data in the BTree.
+	 */
 	class BTreeData {
+		/**
+		 * The data to be saved.
+		 * 
+		 * @var undefined
+		 * @access private
+		 */
 		private $data;
 		
 		public function __construct($data=null)
