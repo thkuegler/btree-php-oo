@@ -1,6 +1,11 @@
 <?php
 	include './BTreeData.php';
-	
+
+/**
+ * DEPRECATED
+ * NOT FUNCTIONAL
+ * First version of the class Node.
+ */
 	class Node {
 		private $keys;
 		private $leaf;
