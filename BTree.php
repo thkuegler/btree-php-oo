@@ -2,11 +2,35 @@
 	include './Node.php';
 
 	/**
-	 * The class for a B-Tree
+	 * The class providing the basic structure of the B-Tree.
 	 */
 	class BTree {
+		/**
+		 * The root of the B-Tree.
+		 * Can contain zero to $order keys.
+		 * 
+		 * @var Node
+		 * @access private
+		 */
 		private $root;
+		
+		/**
+		 * The order of the B-Tree.
+		 * Is always twice the size of $minNumChildren.
+		 * Defines the max. number keys a node can have.
+		 * 
+		 * @var int
+		 * @access private
+		 */
 		private $order;
+		
+		/**
+		 * The minimal number children every node but the root can have.
+		 * Thereby defining the minimal number keys as $minNumChildren - 1.
+		 * 
+		 * @var int
+		 * @access private
+		 */
 		private $minNumChildren;
 		
 		public function __construct()
