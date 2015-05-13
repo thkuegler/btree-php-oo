@@ -1,9 +1,35 @@
 <?php
 	include './Keyelement.php';
 	
+	/**
+	 * The class for a node of the B-Tree.
+	 * The nodes contain a by the BTree defined number of keys.
+	 * A node can either be an inner node or an leaf node.
+	 */
 	class Node {
+		/**
+		 * The keys for this node as an array containing "Keyelements".
+		 * 
+		 * @var array<Keyelement>
+		 * @access private
+		 */
 		private $keys;
+		
+		/**
+		 * An indicator if this node is an inner node or an leaf node.
+		 * 
+		 * @var boolean
+		 * @access private
+		 */
 		private $leaf;
+		
+		/**
+		 * Is only set if ,due to a deletion, the root is emptied.
+		 * Contains if set the new root node for this BTree.
+		 * 
+		 * @var Node
+		 * @access private
+		 */
 		private $rootReplacement;
 	
 		public function __construct($keys=null, $isLeaf=true)
